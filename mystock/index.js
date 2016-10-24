@@ -15,39 +15,41 @@ function valuesToArray(obj) {
         return obj[key];
     });
 };
-$(document).ready(function() {$('#go_button').click()});
 
-        request({
-            url: url,
-            json: true
-        }, function(error, response, body) {
-            if (!error && response.statusCode === 200) {
-                iArr = valuesToArray(body);
-                for (var i = 0; i < iArr.length; i++) {
-                    if (typeof iArr[i] === 'object') {
-                        arr.push(iArr[i]);
-                    };
+// $(document).ready(
+
+    request({
+        url: url,
+        json: true
+    }, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+            iArr = valuesToArray(body);
+            for (var i = 0; i < iArr.length; i++) {
+                if (typeof iArr[i] === 'object') {
+                    arr.push(iArr[i]);
                 };
-                arr.forEach(function(element) {
-                    for (var obj in element) {
-                        pureObjs.push(element[obj]);
-                    };
-                });
-                for (var i = 0; i < pureObjs.length; i++) {
-                    if (pureObjs[i].live !== '0') {
-                        liveOnly.push(pureObjs[i].title);
-                    }
+            };
+            arr.forEach(function(element) {
+                for (var obj in element) {
+                    pureObjs.push(element[obj]);
+                };
+            });
+            for (var i = 0; i < pureObjs.length; i++) {
+                if (pureObjs[i].live !== '0') {
+                    liveOnly.push(pureObjs[i].title);
                 }
-                console.log("All available locations: ", liveOnly, ".");
-                for (var i = 0; i < liveOnly.length; i++) {
-                    if (liveOnly[i] === '4th Street' || liveOnly[i] === 'Emeryville' || liveOnly[i] === 'San Francisco') {
-                        console.log("BINGO! Phone is available at ", liveOnly);
-                    } else {
-                        console.log("Nothing found in Berkeley or Emeryville");
-                        return;
-                    }
-                }
-            } else {
-                console.log("error");
             }
-        });
+            var allAvailabe = console.log("All available locations: ", liveOnly, ".");
+            for (var i = 0; i < liveOnly.length; i++) {
+                if (liveOnly[i] === '4th Street' || liveOnly[i] === 'Emeryville' || liveOnly[i] === 'San Francisco') {
+                    console.log("BINGO! Phone is available at ", liveOnly);
+                } else {
+                    console.log("Nothing found in Berkeley or Emeryville");
+                    return;
+                }
+            }
+        } else {
+            console.log("error");
+        }
+    });
+// );

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/standardhuman/mystock#readme",
   "dependencies": {
     "browser-request": "^0.3.3",
+    "jquery": "^3.1.1",
     "request": "^2.75.0"
   }
 }
