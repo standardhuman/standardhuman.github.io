@@ -1,99 +1,153 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Products by Brian Cline</title>
+  <meta charset="UTF-8">
+  <title>Flex Panels 💪</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-    <h4>Products by Brian Cline</h4>
-    <ul>
-        <li>Custom iPhone 7 inventory search <a href="https://standardhuman.github.io/mystock">[app]</a>
-            <a href="http://github.com/standardhuman/mystock">[source]</a>
-        </li>
-        <li>Positive Balance: Simple quality of life tracking</li>
-        <ul>
-            <li><a href="https://standardhuman.github.io/positivebalance/jquery/">[in jquery]</a>
-                <a href="https://github.com/standardhuman/positivebalance/tree/master/jquery">[jquery source]</a></li>
-            <li><a href="https://standardhuman.github.io/positivebalance/angular/">[in angular]</a>
-                <a href="https://github.com/standardhuman/positivebalance/tree/master/angular">[angular source]</a></li>
-            <li>Currently in development:<a href="href=https://github.com/standardhuman/positivebalance/react">[react source]</a></li>
-        </ul>
-        </li>
-        <li>Cirrus Cloud Collective: 10 day software engineering bootcamp <a href="https://github.com/CirrusCollective/home">[source]</a></li>
-    </ul>
+  <style>
+    html {
+      /* box-sizing: border-box; */
+      background:#ffc600;
+      font-family:'helvetica neue';
+      font-size: 20px;
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    .panels {
+      min-height:100vh;
+      overflow: hidden;
+      display: flex;
+      /* border: 2px solid red; */
+    }
+    .panel {
+      background:#6B0F9C;
+      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+      color:white;
+      text-align: center;
+      align-items:center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size:cover;
+      background-position:center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* border: 2px solid blue; */
+    }
+    /* all of a panels' children */
+    .panel > * {
+      margin:0;
+      width: 100%;
+      transition:transform 0.5s;
+      border: 2px solid yellow;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* only the first child of a panel */
+    .panel > *:first-child {
+      transform: translateY(50%);
+    }
 
-    <h4>Technologies practiced:</h4>
-    <div>
-        <p>Full stack</p>
-        <ul>
-            <li>
-                <p>Database
-                    <-> db query
-                        <-> server
-                            <-> request handler
-                                <-> endpoint
-                                    <-> HTTP request
-                                        <-> client JS -> html/css</p>
-            </li>
-        </ul>
+    /*  */
+    .panel.open-active > *:first-child {
+      transform: translateY(0);
+      align-items: flex-start;
+      flex: 1;
+      color: black;
+    }
+    .panel > *:last-child {
+      transform: translateY(200%);
+    }
+    .panel.open-active > *:last-child {
+      transform: translateY(0);
+      flex: 4;
+    }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 1em;
+    }
+    /* .panel p:nth-child(2) {
+      font-size: 4em;
+    } */
+    .panel.open {
+      font-size:40px;
+      flex: 8;
+    }
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <h2>Contact</h2>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec nibh lorem. Sed tempus justo ullamcorper metus fringilla ullamcorper. Aliquam erat volutpat. Maecenas id enim sed dui feugiat tristique. Sed fermentum ac tortor pretium tristique. Cras at semper lacus. Maecenas iaculis risus vitae dictum commodo. Praesent id mauris interdum, faucibus lacus eget, euismod felis. Cras varius a odio sit amet mattis. Suspendisse potenti. Curabitur pretium enim quis euismod pretium.
+        </p>
+      </div>
+
     </div>
-    <p>Core HTML</p>
-    <ul>
-        <li>forms</li>
-        <li>input</li>
-        <li>lables</li>
-        <li>button</li>
-        <li>p</li>
-        <li>div</li>
-        <li>span</li>
-        <!-- <input><labels> <button> <p>  <div> <span> -->
-    </ul>
+    <div class="panel panel2">
+      <h2>Brian</h2>
+      <p>Cline</p>
+    </div>
+    <div class="panel panel3">
+      <h2>About</h2>
+      <p></p>
+    </div>
+    <div class="panel panel4">
+      <h2>Blah</h2>
+      <p>Blog</p>
+    </div>
+    <!-- <div class="panel panel5">
+      <p></p>
+      <p>Blog</p>
+      <p></p>
+    </div> -->
+  </div>
 
-    <p>HTTP requests</p>
-    <ul>
-        <li>HTTP requests from native HTML forms</li>
-        <li>XMLHttpRequest</li>
-    </ul>
-    <p>
-        Encodings
-    </p>
-    <ul>
-        <li>form-data (express: multer)</li>
-        <li>x-www-form-urlencoded (express: body parser)</li>
-    </ul>
+  <script>
 
-    <p>Front End</p>
-    <ul>
-        <li>JavaScript ECMAScript 6</li>
-        <li>jQuery</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Markdown</li>
-    </ul>
 
-    <p> Back End</p>
-    <ul>
-        <li>Node</li>
-        <li>Nodal</li>
-        <li>Express</li>
-        <li>Postrgres</li>
-    </ul>
 
-    <p>Tooling</p>
-    <ul>
-        <li>git</li>
-        <li>Postman</li>
-        <li>Atom</li>
-        <li>Terminal</li>
-        <li>Chrome dev tools</li>
-    </ul>
+  const openPanels = document.querySelectorAll('.open')
+  console.log(openPanels);
 
-    standardhuman.github.io
+  const panels = document.querySelectorAll('.panel')
+
+  function toggleOpen(e){
+    this.classList.toggle('open')
+  }
+  panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+
+
+
+  function toggleActive(e){
+    if(e.propertyName.includes('flex')){
+      this.classList.toggle('open-active')
+    };
+  }
+  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+
+  </script>
+
 
 
 </body>
-
 </html>
