@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 <body>
   <style>
     html {
-      /* box-sizing: border-box; */
+      box-sizing: border-box;
       background:#ffc600;
       font-family:'helvetica neue';
       font-size: 20px;
@@ -24,7 +25,6 @@
       min-height:100vh;
       overflow: hidden;
       display: flex;
-      /* border: 2px solid red; */
     }
     .panel {
       background:#6B0F9C;
@@ -42,112 +42,211 @@
       background-size:cover;
       background-position:center;
       flex: 1;
+      justify-content: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      /* border: 2px solid blue; */
+      border: red solid 2px;
     }
-    /* all of a panels' children */
+    .panel1 { }
+    .panel2 { }
+    .panel3 { }
+    .panel4 { }
+    .panel5 { }
+
+    /* Flex Items */
     .panel > * {
       margin:0;
       width: 100%;
       transition:transform 0.5s;
-      border: 2px solid yellow;
-      flex: 1;
-      display: flex;
+      flex: 1 0 auto;
+      display:flex;
       justify-content: center;
       align-items: center;
+      /* transform: translateY(750%); */
     }
-    /* only the first child of a panel */
-    .panel > *:first-child {
-      transform: translateY(50%);
-    }
-
-    /*  */
-    .panel.open-active > *:first-child {
-      transform: translateY(0);
-      align-items: flex-start;
-      flex: 1;
-      color: black;
-    }
-    .panel > *:last-child {
-      transform: translateY(200%);
-    }
-    .panel.open-active > *:last-child {
-      transform: translateY(0);
-      flex: 4;
-    }
-
-    .panel p {
+    /* .panel p {
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
       text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 1em;
-    }
+      font-size: 2em;
+      border: white solid 2px;
+    } */
     /* .panel p:nth-child(2) {
       font-size: 4em;
     } */
+    .header {
+      border: solid red 2px;
+      flex: 1;
+    }
+    .header.open {
+      background-color: orange;
+    }
+
+    .title {
+      border: solid coral 2px;
+      flex: 1;
+      transition:
+    }
+    .title.open {
+      background-color: orange;
+    }
+
+    .bod {
+      border: solid blue 2px;
+      flex: 1;
+      transform: translateY(0);
+    }
+    .bod.open {
+      background-color: orange;
+    }
+
     .panel.open {
-      font-size:40px;
+      border: red solid 5px;
       flex: 8;
     }
+    /* .panel.open > .title {
+      transform: translateY(-90%);
+      border: solid teal 2px;
+    }
+    .panel.open > .bod {
+      transform: translateY(-40%);
+      font-size: 30px;
+      flex: 1;
+    } */
   </style>
 
 
   <div class="panels">
     <div class="panel panel1">
-      <h2>Contact</h2>
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec nibh lorem. Sed tempus justo ullamcorper metus fringilla ullamcorper. Aliquam erat volutpat. Maecenas id enim sed dui feugiat tristique. Sed fermentum ac tortor pretium tristique. Cras at semper lacus. Maecenas iaculis risus vitae dictum commodo. Praesent id mauris interdum, faucibus lacus eget, euismod felis. Cras varius a odio sit amet mattis. Suspendisse potenti. Curabitur pretium enim quis euismod pretium.
-        </p>
-      </div>
-
+      <p class="header">header</p>
+      <p class="title">title</p>
+      <p class="bod">bod</p>
     </div>
     <div class="panel panel2">
-      <h2>Brian</h2>
-      <p>Cline</p>
+      <p class="header">header</p>
+      <p class="title">title</p>
+      <p class="bod">bod</p>
     </div>
     <div class="panel panel3">
-      <h2>About</h2>
-      <p></p>
+      <p class="header">header</p>
+      <p class="title">title</p>
+      <p class="bod">bod</p>
     </div>
-    <div class="panel panel4">
-      <h2>Blah</h2>
-      <p>Blog</p>
-    </div>
-    <!-- <div class="panel panel5">
-      <p></p>
-      <p>Blog</p>
-      <p></p>
-    </div> -->
   </div>
 
   <script>
+    const panels = document.querySelectorAll('.panel');
+    const titles = document.querySelectorAll('.title');
+    const headers = document.querySelectorAll('.header');
+    const bods = document.querySelectorAll('.bod');
 
+    // function toggleOpenTitles(e){
+    //   panels.forEach(panel => {
+    //     if(panel.classList.contains('open')){
+    //       panel.classList.remove('open');
+    //     }
+    //   })
+    //   titles.forEach(title => {
+    //     if(title.classList.contains('open')){
+    //       title.classList.remove('open');
+    //     }
+    //   })
+    //   e.target.parentElement.classList.add('open');
+    //   // e.target.parentElement.classList.add('open-active');
+    //   e.target.classList.add('open');
+    //   e.stopPropagation();
+    // }
 
+// make title.open, header.open, and bod.open styling rules
+// on click,
+  // check if e.target contains .open. If so:
+    // remove .open from (e.target.parentElement.children + e.target.parentElement?)
+    // stop
+    // else
+      // loop through all panels, header, titles, and bod,
+        // remove .open
+        // add open to e.target.parentElement
+        // add open to e.target.parentElement.children
+  // add
 
-  const openPanels = document.querySelectorAll('.open')
-  console.log(openPanels);
+// add .open to .header, .title, .bod
 
-  const panels = document.querySelectorAll('.panel')
+// THIS WORKS TO TOGGLE THE TARGET PARENTS AND CHILDREN...just need to sweep the non-target panels and children
+    function toggleOpenPanels(e){
+      console.log("Start: parent classList:", e.target.parentElement.classList);
+      console.log("Start: target classList:", e.target.classList);
+      console.log("Looking for open classes...");
+      //check if target parent panel is open and closes if so.
 
-  function toggleOpen(e){
-    this.classList.toggle('open')
+      // check if target parent panel has open
+      if((e.target.classList.contains('open')) || (e.target.parentElement.classList.contains('open'))){
+        console.log("Open class found!");
+        console.log("Removing from parent...");
+        e.target.parentElement.classList.remove('open')
+        for (var child in e.target.parentElement.children) {
+          console.log("Removing from children...");
+          if (e.target.parentElement.children.hasOwnProperty(child)) {
+            e.target.parentElement.children[child].classList.remove('open')
+          }
+        }
+      }else{
+        // loop through kids and add open to each one
+        for(let child in e.target.parentElement.children){
+            console.log("Child classList before: ", e.target.parentElement.children[child].classList);
+            console.log("attempting to add open to the kids...");
+            if(e.target.parentElement.children.hasOwnProperty(child)){
+            e.target.parentElement.children[child].classList.add('open')
+            console.log("Child classList after: ", e.target.parentElement.children[child].classList);
+          }
+        }
+        // add open to parent panel
+        console.log("Parent classList before: ", e.target.parentElement.classList);
+        console.log("attempting to add open to the parent...");
+        e.target.parentElement.classList.add('open')
+        console.log("Parent classList after: " , e.target.parentElement.classList);
+        e.stopPropagation()
+    }
+    console.log("End: parent classList:", e.target.parentElement.classList);
+    console.log("End: target classList:", e.target.classList);
+    e.stopPropagation()
   }
-  panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+      //
+    //   if(e.target.parentElement.children[child].classList.contains('header')){
+    //     child.classList.remove('open')
+    //     child.parentElement.classList.remove('open')
+    //   }else{
+    //     panels.forEach(panel => {
+    //       panel.classList.remove('open');
+    //     })
+    //   }
+      // titles.forEach(title => {
+      //   console.log("running", e.target);
+      //   if(title.classList.contains('open')){
+      //     title.classList.remove('open');
+      //     title.classList.remove('open-active')
+      //   }
+      // })
+      // e.target.classList.add('open');
+      // e.target.classList.add('open-active');
+    //   if(!(e.target.parentElement.classList.contains('panel'))){
+    //     console.log("doin it");
+    //   e.target.parentElement.classList.add('open');
+    //   e.stopPropagation();
+    //   }
+    // }
 
+    // function toggleActive(e) {
+    //   if (e.propertyName.includes('flex')) {
+    //     this.classList.toggle('open-active');
+    //   }
+    // }
 
-
-  function toggleActive(e){
-    if(e.propertyName.includes('flex')){
-      this.classList.toggle('open-active')
-    };
-  }
-  panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+    panels.forEach(panel => panel.addEventListener('click', toggleOpenPanels));
+    titles.forEach(title => title.addEventListener('click', toggleOpenPanels));
+    headers.forEach(header => header.addEventListener('click', toggleOpenPanels));
+    bods.forEach(bod => bod.addEventListener('click', toggleOpenPanels));
 
   </script>
-
-
 
 </body>
 </html>
