@@ -3,169 +3,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flex Panels 💪</title>
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" type="text/css">
+  <title>Brian Cline</title>
+  <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" type="text/css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+<!-- Brian(about me, my backstory)
+Codes(gallery of sites)
+Now(projects in the works, blog) -->
+<input id="example-checkbox" type="checkbox">
+<label for="example" id="example">Show</label>
 </head>
 <body>
-  <style>
-    html {
-      box-sizing: border-box;
-      background: #ffc600;
-      font-family:'helvetica neue';
-      font-size: 20px;
-      font-weight: 200;
-    }
-    body {
-      margin: 0;
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
-    .panels {
-      min-height:100vh;
-      overflow: hidden;
-      display: flex;
-    }
-    /* .panel p {
-      text-transform: uppercase;
-      font-family: 'Amatic SC', cursive;
-      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 2em;
-      border: white solid 2px;
-    } */
-    .panel {
-      background:#6B0F9C;
-      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
-      color:white;
-      text-align: center;
-      align-items:center;
-      /* Safari transitionend event.propertyName === flex */
-      /* Chrome + FF transitionend event.propertyName === flex-grow */
-      transition:
-        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
-        background 0.2s;
-      font-size: 20px;
-      background-size:cover;
-      background-position:center;
-      flex: 1;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      min-height: auto;
-    }
-    .panel1 { }
-    .panel2 { }
-    .panel3 { }
-    .panel4 { }
-    .panel5 { }
-
-    /* Flex Items */
-    .panel > * {
-      margin:0;
-      width: 100%;
-      transition:transform 0.5s;
-      flex: 1 0 auto;
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      /* transform: translateY(750%); */
-    }
-
-    .panel p:nth-child(2) {
-      font-size: 4em;
-    }
-    .panel.open {
-      border: red solid 5px;
-      flex: 8;
-    }
-    .header {
-      border: solid red 2px;
-      flex: 1;
-      transform: translateY(-100%);
-    }
-    .header.open {
-      transform: translateY(0%);
-    }
-    .title {
-      border: solid green 2px;
-      flex: 1;
-    }
-    .title.open {
-      transform: translateY(-50%)
-    }
-    .bod {
-      border: solid blue 2px;
-      flex: 1;
-      transform: translateY(200%);
-    }
-    .bod.open {
-      transform: translateY(0);
-    }
-  </style>
-
-
   <div class="panels">
     <div class="all panel panel1">
-      <p class="all header">header</p>
-      <p class="all title">title</p>
-      <p class="all bod">bod</p>
+      <p class="all header"></p>
+      <p class="all title">Hi</p>
+      <div class="all bod">
+
+
+      </div>
     </div>
+
     <div class="all panel panel2">
-      <p class="all header">header</p>
-      <p class="all title">title</p>
-      <p class="all bod"><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus ante arcu, vestibulum porta nibh malesuada a. Proin volutpat mi sit amet ligula laoreet tristique. Fusce ultricies felis eget erat tempor, non blandit ex consequat. Cras lacinia leo sit amet orci pharetra, fermentum cursus sem tempor. Aliquam pulvinar nisl vitae sem laoreet, nec iaculis orci rutrum. Vestibulum cursus purus risus. Nunc dapibus sapien sem, eget viverra magna rutrum et. Quisque sodales enim non dolor venenatis, a auctor nibh vulputate. Nulla in euismod ligula. Suspendisse potenti.
+      <p class="all header">I'm</p>
+      <p class="all title">I</p>
+      <div class="all bod">
+        <img class="all" src="me.jpeg">
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus ante arcu, vestibulum porta nibh malesuada a. Proin volutpat mi sit amet ligula laoreet tristique. Fusce ultricies felis eget erat tempor, non blandit ex consequat. Cras lacinia leo sit amet orci pharetra, fermentum cursus sem tempor. Aliquam pulvinar nisl vitae sem laoreet, nec iaculis orci rutrum. Vestibulum cursus purus risus. Nunc dapibus sapien sem, eget viverra magna rutrum et. Quisque sodales enim non dolor venenatis, a auctor nibh vulputate. Nulla in euismod ligula. Suspendisse potenti.
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus ante arcu, vestibulum porta nibh malesuada a. Proin volutpat mi sit amet ligula laoreet tristique. Fusce ultricies felis eget erat tempor, non blandit ex consequat. Cras lacinia leo sit amet orci pharetra, fermentum cursus sem tempor. Aliquam pulvinar nisl vitae sem laoreet, nec iaculis orci rutrum. Vestibulum cursus purus risus. Nunc dapibus sapien sem, eget viverra magna rutrum et. Quisque sodales enim non dolor venenatis, a auctor nibh vulputate. Nulla in euismod ligula. Suspendisse potenti. END -->
-      </p>
+        <p class="all">
+        I was a sailor, an educator, a runner, and a compulsive habit maker. In 2015 I decided I wanted to learn programming. So I set about the task of learning everything I could get my hands on about making these little machines go beep.
+        <br />
+        First, I started by working along the Free Code Camp Front-End track and various Codecademy courses. Then I started going to programming meetups. One day I learned about the Telegraph Academy prep course. It was like night school for web development. For 6 weeks, 4 nights a week I learned how to use JavaScript. When I finished that, I came back as a teaching assistant to help the new cohort of students through their work because there is nothing — absolutely nothing — half so much worth doing as helping others find their way to their own "ah-ha!" moments.
+        <br />
+        I also love how much I learn in the process. It’s unavoidable. I love it so much I started my own teaching experiment. My mission: find a few students who were new to programming that wanted to spend some time learning with me. I would design and build out the daily curriculum and jump in to help get them unstuck as needed. It would all be remote. It would all be free. And for me, a relatively new programmer myself, it would be totally terrifying. With the gentle encouragement and guidance of one remarkable friend, it became all of these things. But it also became relentlessly satisfying. For 30 days I led a group of 4-6 students through an intro crash course in computer science and javascript programming. It was called the <a href="https://github.com/CirrusCollective/home">Cirrus Collective</a>. Looking back now I don’t know how I did it, but I do know why.
+        <br />
+        Then, several months ago, that same remarkable friend connected me with Larry. Larry was at a similar point in his coding journey and was as willing to throw as many hours at it as I was. Soon, Larry and I were stumbling, hacking, and bashing (our heads against the wall) together for hours everyday. Day in and day out since August ’16 we would put in 6-10 hour days. We’ve learned about data structures. We’ve crunched loads of algorithms. We’ve learned about HTTP requests and encodings and we’ve built servers to handle them using Node and Express. We’ve learned more JavaScript and implemented frameworks like
+        <a href="https://standardhuman.github.io/positivebalance/jquery/">jQuery,</a>
+        <a href="https://github.com/standardhuman/positivebalance/tree/master/angular">Angular</a>,
+        <a href="href=https://github.com/standardhuman/positivebalance/react"> React</a> and are currently chowing down on React Native. Those are the source links to a pet project but please, avert your eyes from these abominations that have staggered from the labs of inept madmen.
+        <br />
+        We’ve built out backends with Node and Postgres, but we’ve recently discovered Firebase and <em>really</em> like that. We are writing tidier, more potent code with ES6. We’re making prettier UIs faster and easier with Flexbox. We’ve learned how to speed things up by decluttering the critical rendering path. We’ve learned to better manage our versioning messes via git and GitHub. We’ve made our homes at the command line and MDN and in Atom and Chrome dev tools. We’ve learned a lot about autonomy and how to build software and how to work remotely with someone we’ve never met, because Larry lives in Brooklyn.
+        <br />
+        But mostly we’ve learned a lot about how to learn.
+        </p>
+      </div>
     </div>
+
     <div class="all panel panel3">
-      <p class="all header">header</p>
-      <p class="all title">title</p>
-      <p class="all bod">bod</p>
+      <p class="all header">Here are some things for which I've written</p>
+      <p class="all title">Code</p>
+      <div class="all bod">
+        <p class="all">A few projects currently in varying stages of process are:
+        </p>
+
+        <div class="project">
+          <p class="all project_title">Positive Balance
+            <br />
+            Habit tracking across disparate activities
+          </p>
+          <a target="_blank" href="https://github.com/standardhuman/positivebalance">GitHub Repo</a>
+          <a target="_blank" href="https://positive-balance-bc.firebaseapp.com">Live</a>
+          <br />
+          React + Flexbox + Firebase
+        </div>
+
+        <div class="project">
+          <p class="all project_title">
+            Hotel App: a Seamless/GrubHub clone for ordering room service
+          </p>
+          <a target="_blank" href="https://github.com/tandcsurf/hotel-app">GitHub Repo</a>
+        </div>
+
+        <p class="all project_title">
+          100 Days of Code Log: Steamlines the GitHub pushing and Tweeting of your 100 days of code progress.
+        </p>
+        <a target="_blank" href="https://github.com/standardhuman/log-app">GitHub Repo</a>
+
+        <p class="all project_title">
+          <a href="https://scratch.mit.edu/projects/159301671/#player">Planet Tonald Drump</a>: a game built using Scratch as part of Harvard's CS50 course.
+        </p>
+
+        <p class="all project_title">
+          Tea Machine
+        </p>
+        <a target="_blank" href="https://github.com/standardhuman/make_tea">GitHub</a>
+        <br />
+        C/C++
+
+        <p class="all project_title">briancline.io (you're looking at it!)
+        </p>
+        <a href="briancline.io">Reset this page</a>
+        <br />
+        HTML + CSS/Flexbox + JavaScript
+      </div>
+
     </div>
   </div>
-
-  <script>
-    const alls = document.querySelectorAll('.all');
-
-    function toggleOpenPanels(e){
-      //check if target parent panel is open and closes if so.
-      // check if target parent panel has open
-      if((e.target.classList.contains('open')) || (e.target.parentElement.classList.contains('open'))){
-        console.log("Target or ParentElement contains .open");
-        e.target.parentElement.classList.remove('open')
-        for (var child in e.target.parentElement.children) {
-          if (e.target.parentElement.children.hasOwnProperty(child)) {
-            e.target.parentElement.children[child].classList.remove('open')
-          }
-        }
-      }else{
-        // remove open from all other elements
-        alls.forEach(all => all.classList.remove('open'))
-        // loop through kids and add open to each one
-        for(let child in e.target.parentElement.children){
-            if(e.target.parentElement.children.hasOwnProperty(child)){
-            // e.target.parentElement.children[child].classList.add('open')
-            e.target.classList.add('open')
-          }
-        }
-        // add open to parent panel
-        console.log("e.target.classList:", e.target.classList);
-        console.log("e.target.parentElement.classList:", e.target.parentElement.classList);
-        console.log("Attempting to add open to: ", e.target.classList);
-        e.target.classList.add('open')
-        e.target.parentElement.classList.add('open')
-        e.stopPropagation()
-    }
-        e.stopPropagation()
-  }
-
-    alls.forEach(all => all.addEventListener('click', toggleOpenPanels))
+  <script type="text/javascript" src="index.js">
 
   </script>
-
 </body>
 </html>
