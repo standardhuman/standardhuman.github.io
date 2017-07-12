@@ -1,0 +1,17 @@
+1. Does it make sense to use React for a small but repetitive part of a simple website?
+Or how does one do the same with vanilla JS?
+
+
+<!-- Add to backstory: what I'm looking for. Rename section to About Brian -->
+
+Here's the situation. I'm making my portfolio site. It's a pretty simple site, just three sections. One for contacting me, one with my backstory, and one with links to my projects. There are some fun, and I hope useful, click animations but so far I've done everything using html/css/js and I'd like to keep it that stack as simple as possible. The contact section is very straightforward, just an email address and a link to my github repos. The backstory section is so far one long section of text with one image. But the projects section, that has several items that are formatted exactly the same. With the oft repeated rule of Do Not Repeat Yourself repeating itself in my head, I found myself repeatedly cringing as I would make the same change over and over again to different items. These changes were things like: adding heading tags, backgrounds, and borders, rearranging the order of elements and messing with flex properties.
+
+So I set out to answer two questions:
+  1. How can I reduce repetition using vanilla javascript?
+  2. Is using React for such a simple site worth the overhead?
+      a. What is the overhead?
+
+1. Using vanilla javascript:
+  The goal here is to replicate the useful component, JSX, and state updating features of React.
+
+One feature of React that I will not be needing is passing up state.

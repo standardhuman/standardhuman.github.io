@@ -124,6 +124,7 @@
     flex: 5;
     display: block;
     overflow: scroll;
+    justify-content: space-between;
     /* border: solid blue 2px; */
   }
 
@@ -140,6 +141,14 @@
 
   a {
     color: rgb(255, 245, 0);
+  }
+
+  .project {
+    border-radius: 20px;
+    background-color: gray;
+    padding: .2em;
+    margin: 1em;
+    justify-content: space-between;
   }
 
   #example {
