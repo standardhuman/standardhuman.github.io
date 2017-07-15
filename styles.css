@@ -17,7 +17,7 @@
     overflow: hidden;
     display: flex;
     /* border: blue solid 2px; */
-    flex-direction: row;
+    flex-direction: column;
   }
   .panel p {
     font-family: 'Amatic SC', cursive;
@@ -66,7 +66,7 @@
     flex: 2;
   }
   .panel2{
-    flex: 0.5;
+    flex: 2;
   }
   .panel3{
     flex: 2;
@@ -92,36 +92,28 @@
   }
 
   .header.open {
+    border: solid green 2px;
     transform: translateY(0%);
-    flex: .5;
+    flex: 1;
   }
 
   .title {
-    border: solid green 2px;
     flex: 1;
     /* text-decoration: underline; */
     transition: all .2s ease-in-out;
+    justify-content: center;
+    border: 2px yellow solid;
   }
   .title:hover {
      text-shadow: 0px 0px 5px yellow;
      transform: scaley(2);
   }
 
-  .leftTitle {
-    justify-content: flex-end;
-
-  }
-
-  .rightTitle {
-    justify-content: flex-start;
-  }
-
   .title.open {
-    transform: translateY(-200%);
+    transform: translateY(-300%);
     flex: .5;
     text-decoration: none;
     text-transform: lowercase;
-    border: 2px yellow solid;
   }
 
   .titleWord {
@@ -166,9 +158,9 @@
     justify-content: space-between;
   }
 
-  @media(max-width:768px){
+  @media(min-width:768px){
     .panels {
-      flex-direction: column;
+      flex-direction: row;
     }
     .panel{
       font-size: 2em;
@@ -179,5 +171,12 @@
     }
     .title {
       justify-content: center;
+    }
+    .title1 {
+      justify-content: flex-end;
+
+    }
+    .title3 {
+      justify-content: flex-start;
     }
   }
