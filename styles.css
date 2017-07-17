@@ -158,7 +158,7 @@
     justify-content: space-between;
   }
 
-@media(max-width:768px){
+@media(min-width:768px){
   .panels {
     flex-direction: row;
   }
